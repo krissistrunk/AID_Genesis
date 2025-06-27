@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-genesis-gray-50 text-genesis-gray-900;
+  }
+  
+  * {
+    @apply border-genesis-gray-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-genesis-orange hover:bg-genesis-orange-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-genesis-gray-50 text-genesis-gray-700 font-medium py-3 px-6 rounded-lg border border-genesis-gray-300 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent hover:bg-genesis-orange hover:text-white text-genesis-orange font-medium py-3 px-6 rounded-lg border border-genesis-orange transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-genesis-gray-200 p-6 transition-all duration-200 hover:shadow-xl;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-genesis-gray-300 rounded-lg focus:ring-2 focus:ring-genesis-orange focus:border-transparent transition-all duration-200;
+  }
+  
+  .textarea-field {
+    @apply w-full px-4 py-3 border border-genesis-gray-300 rounded-lg focus:ring-2 focus:ring-genesis-orange focus:border-transparent transition-all duration-200 resize-none;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-genesis-gray-200 rounded-full h-2;
+  }
+  
+  .progress-fill {
+    @apply bg-gradient-to-r from-genesis-orange to-genesis-orange-light h-2 rounded-full transition-all duration-300;
+  }
+  
+  .code-editor {
+    @apply border border-genesis-gray-300 rounded-lg overflow-hidden shadow-sm;
+  }
+  
+  .sidebar-nav {
+    @apply w-64 bg-white border-r border-genesis-gray-200 h-full overflow-y-auto;
+  }
+  
+  .main-content {
+    @apply flex-1 overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-genesis-orange to-genesis-orange-light bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Monaco Editor Theme Customizations */
+.monaco-editor {
+  @apply rounded-lg;
+}
+
+.monaco-editor .margin {
+  background-color: #f8fafc !important;
+}
+
+.monaco-editor .current-line {
+  border: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-genesis-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-genesis-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-genesis-gray-400;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 400% 100%;
+}
